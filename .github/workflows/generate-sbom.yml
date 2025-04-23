@@ -56,7 +56,8 @@ jobs:
       - name: Extract version
         id: version
         run: |
-          VERSION= "$(jq -r '.version' ./lerna.json)"
+          #VERSION="$(jq -r '.metadata.component.version' < ${{ env.PRODUCT_PATH }}/bom.json)"
+          VERSION="$(jq -r '.version' ./lerna.json)"
 
           echo "PROJECT_VERSION=$VERSION" >> $GITHUB_OUTPUT
           echo "Product version: $VERSION"
