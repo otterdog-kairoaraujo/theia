@@ -4,11 +4,13 @@ on:
   push:
     branches:
       - sbom-testing
+  release:
+    types: [published]
   workflow_dispatch:
     inputs:
       version:
         description: "Version"
-        default: "main"
+        default: "master"
         required: true
 
 env:
@@ -22,7 +24,7 @@ permissions:
 jobs:
   generate-sbom:
     name: Generate SBOM
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     outputs:
       project-version: ${{ steps.version.outputs.PROJECT_VERSION }}
     permissions:
