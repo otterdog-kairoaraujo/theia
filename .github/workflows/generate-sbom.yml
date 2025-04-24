@@ -3,7 +3,7 @@ name: Generate NPM SBOM
 on:
   push:
     branches:
-      - sbom-testing
+      - sbom-testing # TO DO: Remove
   release:
     types: [published]
   workflow_dispatch:
@@ -58,9 +58,7 @@ jobs:
       - name: Extract version
         id: version
         run: |
-          #VERSION="$(jq -r '.metadata.component.version' < ${{ env.PRODUCT_PATH }}/bom.json)"
           VERSION="$(jq -r '.version' ./lerna.json)"
-
           echo "PROJECT_VERSION=$VERSION" >> $GITHUB_OUTPUT
           echo "Product version: $VERSION"
 
