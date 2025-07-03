@@ -76,4 +76,4 @@ jobs:
       projectVersion: ${{ needs.generate-sbom.outputs.project-version }}
       bomArtifact: "sbom"
       bomFilename: "bom.json"
-      parentProject: "2b55dbe6-7a7e-4659-a803-babf4138e03f"
+      parentProject: "dd3fff36-b35c-404a-a582-2656c59a3e20"
