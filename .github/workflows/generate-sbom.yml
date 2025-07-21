@@ -3,7 +3,7 @@ name: Generate NPM SBOM
 on:
   push:
     branches:
-      - sbom-test # TODO: Remove 
+      - sbom-test # TO DO: Remove 
   release:
     types: [published]
   workflow_dispatch:
