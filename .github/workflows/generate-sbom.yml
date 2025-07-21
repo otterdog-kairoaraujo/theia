@@ -70,7 +70,7 @@ jobs:
 
   store-sbom-data: # stores sbom and metadata in a predefined format for otterdog to pick up
     needs: ["generate-sbom"]
-    uses: eclipse-csi/workflows/.github/workflows/store-sbom-data.yml@main
+    uses: eclipse-csi/workflows/.github/workflows/store-sbom-data.yml@sbom-testing
     with:
       projectName: "theia"
       projectVersion: ${{ needs.generate-sbom.outputs.project-version }}
